@@ -28,8 +28,8 @@ body {
 
 .overlay {
   position: absolute;
-  background: black;
-  width: 100%;
+  background: rgb(51, 50, 50);
+  width: 93%;
   transition: 0.5s ease;
   opacity: 0;
   bottom: 0;
