@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+.movie-card {
+  transform: translate(-50%, -50%) scale(0);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: fit-content;
+  flex-shrink: none !important;
+  max-width: none !important;
+  width: 100% !important;
+  padding: 0.5em !important;
+  background-color: rgb(255, 0, 64);
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-card .poster {
+  position: relative;
+  overflow: hidden;
+  height: 100% !important;
+  width: fit-content;
+}
+
+.movie-card .poster img {
+  width: 100% !important;
+  height: fit-content;
+}
+
+.movie-card .details {
+  font-family: "Roboto Slab", serif !important;
+  width: fit-content;
+  padding-left: 0.5em;
+}
+
+.movie-card .details span {
+  display: inline-block;
+}
+
+.movie-card .close {
+  width: 30px;
+}
+
+.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 150ms ease-in-out;
+}
