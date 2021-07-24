@@ -18,9 +18,6 @@ const MovieList = (props) => {
     setPopupMovie(responseJson);
   };
 
-  console.log(popUpMovie);
-  console.log(clickState);
-
   return (
     <>
       {props.movies.map((movie, index) => (

@@ -12,16 +12,6 @@ const App = () => {
   const [searchValue, setSearchValue] = useState("");
   const [favourites, setFavourites] = useState([]);
 
-  // function isEmpty(obj) {
-  //   for (var prop in obj) {
-  //     if (obj.hasOwnProperty(prop)) {
-  //       return false;
-  //     }
-  //   }
-
-  //   return JSON.stringify(obj) === JSON.stringify({});
-  // }
-
   const getMovieRequest = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=2bc39733`;
 
@@ -44,10 +34,6 @@ const App = () => {
 
     setFavourites(movieFavourites);
   }, []);
-
-  // useEffect(() => {
-  //   console.log(popupMovie);
-  // }, [popupMovie]);
 
   const saveToLocalStorage = (items) => {
     localStorage.setItem("react-movie-app-favourites", JSON.stringify(items));
@@ -72,18 +58,20 @@ const App = () => {
   return (
     <>
       <div class="header">
-        <a href="default" class="logo" align="center">
+        <a href="default" class="logo">
           Movies - Infinity
         </a>
+        <div class="SearchBox">
+          <SearchBox
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </div>
       </div>
 
       <div className="container-fluid movie-app">
         <div className="row d-flex align-items-center mt-4 mb-4">
           <MovieListHeading heading="Movies" />
-          <SearchBox
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-          />
         </div>
         <div className="row">
           <MovieList

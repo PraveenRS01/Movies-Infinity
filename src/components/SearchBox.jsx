@@ -1,13 +1,14 @@
 import React from "react";
+import "../App.css";
 
 const SearchBox = (props) => {
   return (
-    <div className="col col-sm-4">
+    <div className="searchbox">
       <input
         className="form-control"
         value={props.searchValue}
         onChange={(event) => props.setSearchValue(event.target.value)}
-        placeholder="Type the name of a movie..."
+        placeholder="Enter movie name"
       ></input>
     </div>
   );

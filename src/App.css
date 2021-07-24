@@ -41,11 +41,13 @@ body {
 .header {
   overflow: hidden;
   background-color: #5615f0;
-  padding: 20px 10px;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header a {
-  float: left;
   color: black;
   text-align: center;
   padding: 12px;
@@ -55,9 +57,16 @@ body {
   border-radius: 4px;
 }
 
+.header .SearchBox {
+  float: right !important;
+  text-align: right !important;
+  width: auto;
+}
+
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
+  text-align: center !important;
 }
 
 .header a:hover {
@@ -70,15 +79,11 @@ body {
   color: white;
 }
 
-.header-right {
-  float: right;
-}
-
-@media screen and (max-width: 500px) {
+@media screen {
   .header a {
     float: none;
     display: block;
-    text-align: left;
+    text-align: center;
   }
 
   .header-right {
