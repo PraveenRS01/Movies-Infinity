@@ -10,7 +10,7 @@ const MovieList = (props) => {
   const [clickState, setClickState] = useState(false);
 
   const getMovieDetails = async (movieName) => {
-    const url = `http://www.omdbapi.com/?i=${movieName.imdbID}&apikey=2bc39733`;
+    const url = `https://www.omdbapi.com/?i=${movieName.imdbID}&apikey=2bc39733`;
 
     const response = await fetch(url);
     const responseJson = await response.json();
