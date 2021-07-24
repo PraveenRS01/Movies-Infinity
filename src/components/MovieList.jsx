@@ -20,27 +20,29 @@ const MovieList = (props) => {
 
   return (
     <>
-      {props.movies !== null
-        ? props.movies.map((movie, index) => (
-            <div className="image-container d-flex justify-content-start m-3">
-              <img
-                src={movie.Poster}
-                alt="movie"
-                onClick={() => {
-                  getMovieDetails(movie);
-                  setClickState(!clickState);
-                }}
-              ></img>
+      {props.movies !== null ? (
+        props.movies.map((movie, index) => (
+          <div className="image-container d-flex justify-content-start m-3">
+            <img
+              src={movie.Poster}
+              alt="movie"
+              onClick={() => {
+                getMovieDetails(movie);
+                setClickState(!clickState);
+              }}
+            ></img>
 
-              <div
-                onClick={() => props.handleFavouritesClick(movie)}
-                className="overlay d-flex align-items-center justify-content-center"
-              >
-                <FavouriteComponent />
-              </div>
+            <div
+              onClick={() => props.handleFavouritesClick(movie)}
+              className="overlay d-flex align-items-center justify-content-center"
+            >
+              <FavouriteComponent />
             </div>
-          ))
-        : console.log(props.movies)}
+          </div>
+        ))
+      ) : (
+        <></>
+      )}
       <div className={clickState ? "movie-card active" : "movie-card"}>
         <div className="poster">
           <img src={popUpMovie.Poster} alt="Movie Poster" />
