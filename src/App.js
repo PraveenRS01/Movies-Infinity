@@ -40,8 +40,12 @@ const App = () => {
   };
 
   const addFavouriteMovie = (movie) => {
-    const newFavouritesList = [...favourites, movie];
-    const newFavouritesListUnique = [...new Set(newFavouritesList)];
+    favourites.push(movie);
+    //   const uniqueFavourites = favourites.filter((c, index) => {
+    //     return uniqueFavourites.indexOf(c) === index;
+    // });
+
+    const newFavouritesListUnique = [...new Set(favourites)];
     setFavourites(newFavouritesListUnique);
     saveToLocalStorage(newFavouritesListUnique);
   };
