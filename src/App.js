@@ -40,14 +40,16 @@ const App = () => {
   };
 
   const addFavouriteMovie = (movie) => {
-    favourites.push(movie);
-    //   const uniqueFavourites = favourites.filter((c, index) => {
-    //     return uniqueFavourites.indexOf(c) === index;
-    // });
+    if (favourites) {
+      favourites.push(movie);
+      //   const uniqueFavourites = favourites.filter((c, index) => {
+      //     return uniqueFavourites.indexOf(c) === index;
+      // });
 
-    const newFavouritesListUnique = [...new Set(favourites)];
-    setFavourites(newFavouritesListUnique);
-    saveToLocalStorage(newFavouritesListUnique);
+      const newFavouritesListUnique = [...new Set(favourites)];
+      setFavourites(newFavouritesListUnique);
+      saveToLocalStorage(newFavouritesListUnique);
+    }
   };
 
   const removeFavouriteMovie = (movie) => {
