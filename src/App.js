@@ -41,9 +41,6 @@ const App = () => {
 
   const addFavouriteMovie = (movie) => {
     favourites !== null ? favourites.push(movie) : <></>;
-    //   const uniqueFavourites = favourites.filter((c, index) => {
-    //     return uniqueFavourites.indexOf(c) === index;
-    // });
 
     const newFavouritesListUnique = [...new Set(favourites)];
     setFavourites(newFavouritesListUnique);
