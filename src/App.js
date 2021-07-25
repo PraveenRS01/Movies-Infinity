@@ -40,7 +40,7 @@ const App = () => {
   };
 
   const addFavouriteMovie = (movie) => {
-    favourites ? favourites.push(movie) : <></>;
+    favourites !== null ? favourites.push(movie) : <></>;
     //   const uniqueFavourites = favourites.filter((c, index) => {
     //     return uniqueFavourites.indexOf(c) === index;
     // });
